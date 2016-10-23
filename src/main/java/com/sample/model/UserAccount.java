@@ -1,19 +1,21 @@
 package com.sample.model;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+import java.util.UUID;
 
 /**
  * Created by ganeshramiyer on 10/12/16.
  */
 
 @Entity
-@Table(name = "UserAccount")
+@Table(name = "USER_ACCOUNT")
 public class UserAccount {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
+    private String id;
 
     @Column(nullable = false)
+    @NotNull
     private String userName;
 
     @Column(nullable = false)
@@ -23,6 +25,9 @@ public class UserAccount {
         return userName;
     }
 
+    public void setId() {
+        this.id = UUID.randomUUID().toString();
+    }
     public void setUserName(String userName) {
         this.userName = userName;
     }

@@ -1,5 +1,6 @@
 package com.sample.controller;
 
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,10 +19,14 @@ public class RegisterController {
     @Autowired
     private UserAccountRepository userAccountRepo;
 
+    private static final Logger logger = Logger.getLogger(RegisterController.class);
+
     @RequestMapping("/")
     @ResponseBody
     public String test() {
+        logger.info("Adding test user");
         UserAccount user = new UserAccount();
+        user.setId();
         user.setUserName("First");
         user.setPassword("Test");
         userAccountRepo.save(user);
