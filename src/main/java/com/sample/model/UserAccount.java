@@ -1,4 +1,4 @@
-package com.sample;
+package com.sample.model;
 
 import javax.persistence.*;
 
@@ -10,7 +10,7 @@ import javax.persistence.*;
 @Table(name = "UserAccount")
 public class UserAccount {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
     @Column(nullable = false)
