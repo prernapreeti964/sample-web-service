@@ -1,6 +1,5 @@
 package com.sample.models.facade.impl;
 
-import com.sample.controller.RegisterController;
 import com.sample.models.facade.UserAccountFacade;
 import com.sample.models.model.UserAccount;
 import com.sample.models.model.UserAccountRepository;
@@ -23,11 +22,27 @@ public class UserAccountImpl implements UserAccountFacade{
         logger.info("Adding test user");
         UserAccount user = new UserAccount();
         user.setId();
-        user.setUserName("First");
+        user.setEmail("First");
         user.setPassword("Test");
         userAccountRepo.save(user);
         return;
     }
 
+    public void addUser(String email, String password) {
+        UserAccount user = new UserAccount();
+        user.setId();
+        user.setEmail(email);
+        user.setPassword(password);
+        userAccountRepo.save(user);
+        return;
+    }
+
+    public boolean checkCredentials(String email, String password) {
+        if (userAccountRepo.findByEmailAndPassword(email, password).size() == 1) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 
 }
