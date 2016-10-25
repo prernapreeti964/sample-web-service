@@ -7,7 +7,7 @@ package com.sample.models.facade;
 public interface UserAccountFacade {
     void addTestUser();
 
-    void addUser(String email, String password);
+    void addUser(String firstname,String lastname,String email,String school,String department,String password);
 
     boolean checkCredentials(String email, String password);
 }
