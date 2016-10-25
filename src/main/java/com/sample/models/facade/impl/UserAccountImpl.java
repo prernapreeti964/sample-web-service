@@ -28,11 +28,9 @@ public class UserAccountImpl implements UserAccountFacade{
         return;
     }
 
-    public void addUser(String email, String password) {
-        UserAccount user = new UserAccount();
+    public void addUser(String firstname,String lastname,String email,String school,String department,String password) {
+        UserAccount user = new UserAccount(firstname,lastname,email,school,department,password);
         user.setId();
-        user.setEmail(email);
-        user.setPassword(password);
         userAccountRepo.save(user);
         return;
     }

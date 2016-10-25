@@ -1,3 +1,5 @@
 .idea/
 /target
 /logs/
+/src/main/resources/META-INF
+/src/main/resources/application.properties
