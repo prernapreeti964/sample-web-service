@@ -25,7 +25,6 @@ public class RegisterController {
     @RequestMapping(value = "/registeruser", method = RequestMethod.POST)
     @ResponseBody
     public String addUser(@RequestParam("firstname") String firstname,@RequestParam("lastname") String lastname,@RequestParam("email") String email, @RequestParam("password") String password) {
-        logger.info(email +" "+password);
         userAccountFacade.addUser(firstname,lastname,email,"","",password);
         return "User registered";
     }
