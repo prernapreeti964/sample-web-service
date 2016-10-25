@@ -16,20 +16,20 @@ public class UserAccount {
 
     @Column(nullable = false)
     @NotNull
-    private String userName;
+    private String email;
 
     @Column(nullable = false)
     private String password;
 
     public String getUserName() {
-        return userName;
+        return email;
     }
 
     public void setId() {
         this.id = UUID.randomUUID().toString();
     }
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getPassword() {

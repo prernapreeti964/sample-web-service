@@ -9,14 +9,13 @@
     <h1>Mentor Resource Log-in</h1>
 </header>
 <h2>User Log-In</h2>
-<form>
+<form  method="POST" enctype="html/text" action="/validateuser">
     E-mail:<br>
-    <input type="text" id="email" value="johnsmith@gmail.com"><br>
+    <input type="text" id="email" value="johnsmith@gmail.com" name="email"><br>
     Password:<br>
-    <input type="password" id="myPsw" value="psw123"><br>
+    <input type="password" id="myPsw" value="psw123" name="password"><br>
     <input type="checkbox" value="login"> Keep Me Logged In<br>
     <input type="submit" value="Submit">
-    <a href="http://ella.ils.indiana.edu/~almoskwa/password.html">Forgot Password?</a>
 </form>
 </body>
 </html>

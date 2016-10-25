@@ -8,17 +8,17 @@
 <header>
     <h1>Register</h1>
 </header>
-<form>
+<form method="POST" enctype="html/text" action="/registeruser">
     <input type="text" id="firstname" value="First Name"><br>
     <input type="text" id="lastname" value="Last Name"><br>
-    <input type="text" id="email" value="E-mail"><br>
+    <input type="text" id="email" value="E-mail" name="email"><br>
     <select name="school">
         <option disabled selected value>School</option>
     </select>
     <br><select name="department">
     <option disabled selected value>Department</option>
 </select>
-    <br>Password <input type="password" value="Password">
+    <br>Password <input type="password" value="Password" name="password">
     <br>Re-enter Password <input type="password" value="Password">
     <br><input type="submit" value="Register">
 </form>
