@@ -30,7 +30,7 @@ public class UserAccountImpl implements UserAccountFacade{
     }
 
     public void addUser(UserDetails userDetails) {
-        UserAccount user = new UserAccount(userDetails.getFirstName(), userDetails.getLastName(), userDetails.getEmail(), "test", "test", userDetails.getPassword());
+        UserAccount user = new UserAccount(userDetails.getFirstName(), userDetails.getLastName(), userDetails.getEmail(), userDetails.getUniversity(), userDetails.getDepartment(), userDetails.getPassword());
         user.setId();
         userAccountRepo.save(user);
         return;

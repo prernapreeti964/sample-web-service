@@ -9,6 +9,7 @@ public class UserDetails {
     String email;
     String university;
     String password;
+    String department;
 
     public String getFirstName() {
         return firstName;
@@ -48,6 +49,14 @@ public class UserDetails {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getDepartment() {
+        return department;
+    }
+
+    public void setDepartment(String department) {
+        this.department = department;
     }
 
 }
