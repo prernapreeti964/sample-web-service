@@ -2,25 +2,27 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Register</title>
+    <link rel="stylesheet" type="text/css" href="register-style.css">
+    <title>Sign Up: Mentor Resource</title>
 </head>
 <body>
-<header>
-    <h1>Register</h1>
-</header>
-<form method="POST" enctype="html/text" action="/registeruser">
-    <input type="text" id="firstname" value="First Name" name="firstname"><br>
-    <input type="text" id="lastname" value="Last Name" name="lastname"><br>
-    <input type="text" id="email" value="E-mail" name="email"><br>
-    <select name="school">
-        <option disabled selected value>School</option>
-    </select>
-    <br><select name="department">
-    <option disabled selected value>Department</option>
-</select>
-    <br>Password <input type="password" value="Password" name="password">
-    <br>Re-enter Password <input type="password" value="Password">
-    <br><input type="submit" value="Register">
+<div id="logo">
+</div>
+<div id="input-form">
+    <form method="POST" enctype="html/text" action="/registeruser">
+    First Name: <input type="text" id="firstname" class="form-control input-box">
+    <br>
+    Last Name: <input type="text" id="lasttname" class="form-control input-box">
+    <br> 
+    Email: <input type="text" id="email" class="form-control input-box">
+    <br>
+    Password: <input type="password" id="password" class="form-control input-box">
+    <br>
+    Confirm Password: <input type="password" id="password-one" class="form-control input-box">
+    <br>
+    <input type="submit" class="btn btn-info submit-button" value="Sign Up">
 </form>
+    
+</div>
 </body>
 </html>
