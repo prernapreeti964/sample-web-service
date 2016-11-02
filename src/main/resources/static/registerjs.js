@@ -8,6 +8,7 @@ var userDetails = {
     lastName : null,
     email: null,
     university : null,
+    department: null,
     password : null
 }
 
@@ -17,7 +18,8 @@ $("#signup").click(function() {
     userDetails.firstName = $("#firstname").val();
     userDetails.lastName = $("#lastname").val();
     userDetails.email = $("#email").val();
-    userDetails.university = "test";
+    userDetails.university = $("#university-dropdown").val();
+    userDetails.department = $("#department-dropdown").val()
     userDetails.password = $("#password").val();
     console.log(userDetails);
     sendData(userDetails);
@@ -61,8 +63,14 @@ getUniversityList = function () {
 }
 
 loadUnivDropdown = function (result) {
+    $("#university-dropdown").empty();
+    var univList = [];
+
     for(var i = 0; i < result.length; i++) {
-        $("#university-dropdown").append('<option value="'+result[i].universityName+'">'+result[i].universityName+'</option>');
+        if (!univList.includes(result[i].universityName)) {
+            univList.push(result[i].universityName);
+            $("#university-dropdown").append('<option value="'+result[i].universityName+'">'+result[i].universityName+'</option>');
+        }
     }
 }
 
@@ -83,6 +91,7 @@ getDeptList = function (univName) {
 }
 
 loadDeptDropdown = function (result) {
+    $("#department-dropdown").empty();
     for(var i = 0; i < result.length; i++) {
         $("#department-dropdown").append('<option value="'+result[i].departmentInfo+'">'+result[i].departmentInfo+'</option>');
     }
