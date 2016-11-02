@@ -9,20 +9,25 @@
 <div id="logo">
 </div>
 <div id="input-form">
-    <form method="POST" enctype="html/text" action="/registeruser">
+    <form>
     First Name: <input type="text" id="firstname" class="form-control input-box">
     <br>
-    Last Name: <input type="text" id="lasttname" class="form-control input-box">
+    Last Name: <input type="text" id="lastname" class="form-control input-box">
     <br> 
     Email: <input type="text" id="email" class="form-control input-box">
+    <br>
+    <select id="university-dropdown">
+        <option selected="selected">Select Your University</option>
+    </select>
     <br>
     Password: <input type="password" id="password" class="form-control input-box">
     <br>
     Confirm Password: <input type="password" id="password-one" class="form-control input-box">
     <br>
-    <input type="submit" class="btn btn-info submit-button" value="Sign Up">
+    <input type="submit" id="signup" class="btn btn-info submit-button">
 </form>
-    
 </div>
 </body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="registerjs.js"></script>
 </html>

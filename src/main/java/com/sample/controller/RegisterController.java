@@ -1,13 +1,12 @@
 package com.sample.controller;
 
 import com.sample.models.facade.UserAccountFacade;
+import com.sample.models.model.UserAccount;
+import com.sample.models.model.UserDetails;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 
 /**
@@ -24,8 +23,9 @@ public class RegisterController {
 
     @RequestMapping(value = "/registeruser", method = RequestMethod.POST)
     @ResponseBody
-    public String addUser(@RequestParam("firstname") String firstname,@RequestParam("lastname") String lastname,@RequestParam("email") String email, @RequestParam("password") String password) {
-        userAccountFacade.addUser(firstname,lastname,email,"","",password);
+    public String addUser(@RequestBody UserDetails userDetails) {
+        logger.info("Add user called");
+        userAccountFacade.addUser(userDetails);
         return "User registered";
     }
 }

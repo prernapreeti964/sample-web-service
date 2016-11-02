@@ -4,6 +4,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import java.util.UUID;
 
 /**
  * Created by ganeshramiyer on 10/25/16.
@@ -27,8 +28,8 @@ public class UniversityInfo {
         return id;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setId() {
+        this.id = UUID.randomUUID().toString();
     }
 
     public String getUniversityName() {

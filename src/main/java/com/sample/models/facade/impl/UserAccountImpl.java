@@ -3,6 +3,7 @@ package com.sample.models.facade.impl;
 import com.sample.models.facade.UserAccountFacade;
 import com.sample.models.model.UserAccount;
 import com.sample.models.model.UserAccountRepository;
+import com.sample.models.model.UserDetails;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -28,8 +29,8 @@ public class UserAccountImpl implements UserAccountFacade{
         return;
     }
 
-    public void addUser(String firstname,String lastname,String email,String school,String department,String password) {
-        UserAccount user = new UserAccount(firstname,lastname,email,school,department,password);
+    public void addUser(UserDetails userDetails) {
+        UserAccount user = new UserAccount(userDetails.getFirstName(), userDetails.getLastName(), userDetails.getEmail(), "test", "test", userDetails.getPassword());
         user.setId();
         userAccountRepo.save(user);
         return;
