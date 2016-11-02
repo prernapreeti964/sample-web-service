@@ -39,7 +39,7 @@ public class UserAccount {
     	this.department=department;
     	this.password=password;
     }
-    public String getUserName() {
+    public String getEmail() {
         return email;
     }
 
