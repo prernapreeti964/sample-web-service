@@ -1,15 +1,13 @@
 package com.sample.controller;
 
-import com.sample.models.facade.UserAccountFacade;
 import com.sample.models.model.UniversityInfo;
 import com.sample.models.model.UniversityInfoRepository;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 
 /**
@@ -33,5 +31,20 @@ public class UniversityController {
         testUniv.setDepartmentInfo("SOIC");
         universityInfoRepository.save(testUniv);
         return "University Added";
+    }
+
+    @RequestMapping(value = "/getuniversities", method = RequestMethod.GET)
+    @ResponseBody
+    public List<UniversityInfo> getUniversities() {
+        List<UniversityInfo> universityInfoList = universityInfoRepository.findAll();
+        return universityInfoList;
+    }
+
+    @RequestMapping(value = "/getdept", method = RequestMethod.GET)
+    @ResponseBody
+    public List<UniversityInfo> getUniversityDepts(@RequestParam("univName") String univName) {
+        logger.info(univName);
+        List<UniversityInfo> universityInfoList = universityInfoRepository.findByUniversityName(univName);
+        return universityInfoList;
     }
 }

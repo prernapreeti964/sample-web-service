@@ -11,6 +11,8 @@ var userDetails = {
     password : null
 }
 
+var universityDetails = null;
+
 $("#signup").click(function() {
     userDetails.firstName = $("#firstname").val();
     userDetails.lastName = $("#lastname").val();
@@ -19,10 +21,15 @@ $("#signup").click(function() {
     userDetails.password = $("#password").val();
     console.log(userDetails);
     sendData(userDetails);
-    console.log("Data sent");
 });
 
+$("#university-dropdown").click(function(){
+    getUniversityList();
+}) ;
 
+$("#department-dropdown").click(function(){
+    getDeptList($("#university-dropdown").val());
+});
 
 sendData = function (userDetails) {
     $.ajax({
@@ -35,4 +42,48 @@ sendData = function (userDetails) {
             console.log("User saved");
         }
     });
+}
+
+
+getUniversityList = function () {
+    $.ajax({
+        type: "GET",
+        dataType : 'json',
+        url: "/getuniversities",
+        success :function(result) {
+            universityDetails = result;
+            loadUnivDropdown(universityDetails);
+        },
+        error : function (status) {
+            console.log("No database Connection");
+        }
+    });
+}
+
+loadUnivDropdown = function (result) {
+    for(var i = 0; i < result.length; i++) {
+        $("#university-dropdown").append('<option value="'+result[i].universityName+'">'+result[i].universityName+'</option>');
+    }
+}
+
+getDeptList = function (univName) {
+    $.ajax({
+        type: "GET",
+        contentType : 'application/json; charset=utf-8',
+        dataType : 'json',
+        url: "/getdept",
+        data: {univName : univName},
+        success :function(result) {
+            loadDeptDropdown(result);
+        },
+        error : function (status) {
+            console.log("No database Connection");
+        }
+    });
+}
+
+loadDeptDropdown = function (result) {
+    for(var i = 0; i < result.length; i++) {
+        $("#department-dropdown").append('<option value="'+result[i].departmentInfo+'">'+result[i].departmentInfo+'</option>');
+    }
 }
