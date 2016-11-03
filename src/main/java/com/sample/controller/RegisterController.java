@@ -21,8 +21,14 @@ public class RegisterController {
 
     Logger logger = Logger.getLogger(RegisterController.class);
 
-    @RequestMapping(value = "/registeruser", method = RequestMethod.POST)
+    @RequestMapping(value = "/register",  method = RequestMethod.GET, produces = "text/html")
     @ResponseBody
+    public String showRegisterPage() {
+        logger.info("register called");
+        return "/resources/static/register.html";
+    }
+
+    @RequestMapping(value = "/registeruser", method = RequestMethod.POST)
     public String addUser(@RequestBody UserDetails userDetails) {
         logger.info("Add user called");
         userAccountFacade.addUser(userDetails);
