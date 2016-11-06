@@ -16,7 +16,9 @@ background-color:white;
 border-radius: 25px;
 width: 300px;
 height: 100px;
-align-content:center;
+margin:auto;
+	margin-bottom: 50px;
+
 }
 body{
 	background-color:#65A9DF;
