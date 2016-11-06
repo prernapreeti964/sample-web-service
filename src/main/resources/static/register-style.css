@@ -11,12 +11,12 @@
 }
 
 #logo {
-content:url('logo.png');
-background-color:white;
-border-radius: 25px;
-width: 300px;
-height: 100px;
-margin:auto;
+    content:url('logo.png');
+    background-color:white;
+    border-radius: 25px;
+    width: 300px;
+    height: 100px;
+    margin:auto;
 	margin-bottom: 50px;
 
 }
