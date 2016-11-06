@@ -139,8 +139,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b3dced', end
 
 h1 {
 	font-size: 36px;
+	color: #ffffff;
 }
 
 h2 {
 	font-size: 20px;
+	color: #ffffff;
 }
