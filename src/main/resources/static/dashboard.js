@@ -12,23 +12,23 @@ $('#filer-change').click(function(){
 
 var drawBackgroundColor =function () {
     var data = new google.visualization.DataTable();
-    data.addColumn('number', 'X');
-    data.addColumn('number', 'Mentors');
+    data.addColumn('string', 'X');
+    data.addColumn('number', 'Connections');
 
     // Call to backend for data
     // Dummy data
 
     if ($('#year').val()=='2015') {
         rows = [
-            [0, 0],   [1, 10],  [2, 23],  [3, 17],  [4, 18],  [5, 9],
-            [6, 11],  [7, 27],  [8, 33],  [9, 40],  [10, 32], [11, 35],
-            [12, 30]
+            ['Jan', 10],  ['Feb', 23],  ['Mar', 17],  ['April', 18],  ['May', 9],
+            ['June', 11],  ['July', 27],  ['Aug', 33],  ['Sep', 40],  ['Oct', 32], ['Nov', 35],
+            ['Dec', 30]
         ]
     } else {
         rows = [
-            [0, 0],   [1, 10],  [2, 23],  [3, 17],  [4, 18],  [5, 9],
-            [6, 11],  [7, 23],  [8, 31],  [9, 30],  [10, 34], [11, 35],
-            [12, 30]
+            ['Jan', 5],  ['Feb', 15],  ['Mar', 17],  ['April', 12],  ['May', 9],
+            ['June', 15],  ['July', 20],  ['Aug', 13],  ['Sep', 30],  ['Oct', 35], ['Nov', 28],
+            ['Dec', 20]
         ]
     }
 
@@ -36,15 +36,20 @@ var drawBackgroundColor =function () {
 
     var options = {
         title:"Mentor Student Count",
-        titleFontSize:10,
+        titleFontSize:20,
         hAxis: {
-            title: 'Time'
+            title: 'Month'
         },
         vAxis: {
             title: 'Mentor Count'
         },
-        width : 800,
-        height : 600
+        width : 1000,
+        height : 800,
+        backgroundColor: {
+            stroke: '#42b9f4',
+            strokeWidth: 3
+        },
+        colors : ['#111111']
     };
 
     var chart = new google.visualization.LineChart(document.getElementById('mentorstudent-count'));
