@@ -43,8 +43,8 @@ var drawBackgroundColor =function () {
         vAxis: {
             title: 'Mentor Count'
         },
-        width : 1000,
-        height : 800,
+        width : 900,
+        height : 600,
         backgroundColor: {
             stroke: '#42b9f4',
             strokeWidth: 3
