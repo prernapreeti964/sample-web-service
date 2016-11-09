@@ -1,3 +1,27 @@
+#menu-bar {
+    font-size: larger;
+    color: black;
+    font-family: 'Open Sans';
+    font-size: 15px;
+    font-weight: 400;
+    letter-spacing: 0px;
+    background: white;
+}
+
+#branding{
+    height: 50px;
+    width: 250px;
+}
+
+a:hover {
+    color: dodgerblue;
+}
+
+#filter {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
 #mentorstudent-count {
-    align-content: center;
+    margin-bottom: 50px;
 }

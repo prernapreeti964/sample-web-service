@@ -21,7 +21,6 @@ $("#signup").click(function() {
     userDetails.university = $("#university-dropdown").val();
     userDetails.department = $("#department-dropdown").val()
     userDetails.password = $("#password").val();
-    console.log(userDetails);
     sendData(userDetails);
 });
 
@@ -35,14 +34,11 @@ $("#department-dropdown").click(function(){
 
 sendData = function (userDetails) {
     $.ajax({
-        type: "POST",
+        type: "PUT",
         contentType : 'application/json; charset=utf-8',
         dataType : 'json',
         url: "/registeruser",
-        data: JSON.stringify(userDetails),
-        success :function(result) {
-            console.log("User saved");
-        }
+        data: JSON.stringify(userDetails)
     });
 }
 
