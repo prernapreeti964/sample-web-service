@@ -48,7 +48,8 @@ var drawBackgroundColor =function () {
         backgroundColor: {
             stroke: '#42b9f4',
             strokeWidth: 3
-        }
+        },
+        colors : ['#111111']
     };
 
     var chart = new google.visualization.LineChart(document.getElementById('mentorstudent-count'));
