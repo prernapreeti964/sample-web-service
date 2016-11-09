@@ -21,7 +21,7 @@ public class RegisterController {
 
     Logger logger = Logger.getLogger(RegisterController.class);
 
-    @RequestMapping(value = "/registeruser", method = RequestMethod.POST)
+    @RequestMapping(value = "/registeruser", method = RequestMethod.PUT, produces = "plain/text")
     public String addUser(@RequestBody UserDetails userDetails) {
         logger.info("Add user called");
         userAccountFacade.addUser(userDetails);
