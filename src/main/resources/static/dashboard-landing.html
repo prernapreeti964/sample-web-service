@@ -9,7 +9,7 @@
 <nav class="navbar navbar-default">
     <div id="menu-bar" class="container-fluid">
         <div class="navbar-header">
-            <a class="navbar-brand" href="http://www.mentorresource.com">Mentor Resource</a>
+            <a href="http://www.mentorresource.com" class="pull-left"><img id="branding" src="logo.png"></a>
         </div>
         <ul class="nav navbar-nav">
             <li class="active"><a href="#">Home</a></li>
@@ -21,9 +21,17 @@
 </nav>
 
 <div class="container">
-    <h3>Welcome, <var id="userName">name</var></h3>
+    <h4>Welcome, <var id="userName">name</var></h4>
 </div>
-<div id="mentorstudent-count">
+<div id="filter">
+    <select id="year">
+        <option selected="selected">Select Year</option>
+        <option value="2016">2016</option>
+        <option value="2015">2015</option>
+    </select>
+    <input type="submit" id="filer-change" class="btn btn-info btn-sm submit-button">
+</div>
+<div id="mentorstudent-count" align='center'>
 </div>
 </body>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
