@@ -1,18 +1,35 @@
 <!doctype html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <title>Mentor Resource Log-In</title>
+<meta charset="utf-8">
+<title>Mentor Resource Log-In</title>
+<link href="login.css" rel="stylesheet" type="text/css">
 </head>
 <body>
+<header>
+<h1>Mentor Resource Log-in</h1>
+</header>
 <h2>User Log-In</h2>
-<form  method="POST" enctype="html/text" action="/validateuser">
-     E-mail:<br>
-    <input type="text" id="email" value="johnsmith@gmail.com" name="email"><br>
-    Password:<br>
-    <input type="password" id="myPsw" value="psw123" name="password"><br>
-    <input type="checkbox" value="login"> Keep Me Logged In<br>
-    <input type="submit" value="Submit">
-</form>
+<div class="container">
+        <div class="card card-container">
+            <!-- <img class="profile-img-card" src="//lh3.googleusercontent.com/-6V8xOA6M7BA/AAAAAAAAAAI/AAAAAAAAAAA/rzlHcD0KYwo/photo.jpg?sz=120" alt="" /> -->
+            <img id="profile-img" class="profile-img-card" alt="grey-person" src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" />
+            <p id="profile-name" class="profile-name-card"></p>
+            <form class="form-signin">
+                <span id="reauth-email" class="reauth-email"></span>
+                <input type="email"  id="email" class="form-control" placeholder="E-mail" required autofocus><br>
+                <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+                <div id="remember" class="checkbox">
+                    <label>
+                        <input type="checkbox" value="remember-me"> Remember me
+                    </label>
+                </div>
+                <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Sign in</button>
+            </form><!-- /form -->
+            <a href="http://ella.ils.indiana.edu/~almoskwa/password.html" class="forgot-password">
+                Forgot password?
+            </a>
+        </div><!-- /card-container -->
+    </div><!-- /container -->
 </body>
 </html>
