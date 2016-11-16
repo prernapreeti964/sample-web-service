@@ -25,7 +25,6 @@ public class RegisterController {
     public String addUser(@RequestBody UserDetails userDetails) {
         logger.info("Add user called");
         userAccountFacade.addUser(userDetails);
-        System.out.println("registed..");
         return "User registered";
     }
 }

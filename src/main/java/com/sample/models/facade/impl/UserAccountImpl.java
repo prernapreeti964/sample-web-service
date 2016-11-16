@@ -32,7 +32,6 @@ public class UserAccountImpl implements UserAccountFacade{
         userAccountRepo.save(user);
         return;
     }
-    //Reference: https://dzone.com/articles/storing-passwords-java-web
     private String hashPwd(String pwd){
     	StringBuilder pwdHash = new StringBuilder();
 
@@ -53,7 +52,6 @@ public class UserAccountImpl implements UserAccountFacade{
 		return pwdHash.toString();
     }
     public void addUser(UserDetails userDetails) {
-    	//String salt=Long.toHexString(Double.doubleToLongBits(Math.random())); //http://stackoverflow.com/a/1439556
     	String hashedPwd=hashPwd(salt+userDetails.getPassword());
         UserAccount user = new UserAccount(userDetails.getFirstName(), userDetails.getLastName(), userDetails.getEmail(), userDetails.getUniversity(), userDetails.getDepartment(), hashedPwd);
         user.setId();
