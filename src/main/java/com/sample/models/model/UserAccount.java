@@ -27,7 +27,6 @@ public class UserAccount {
 
     @Column(nullable = false)
     private String password;
-
     public UserAccount(){
     	
     }
@@ -39,7 +38,8 @@ public class UserAccount {
     	this.department=department;
     	this.password=password;
     }
-    public String getEmail() {
+    
+	public String getEmail() {
         return email;
     }
 
