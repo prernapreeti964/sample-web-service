@@ -1,12 +1,10 @@
 package com.sample.controller;
 
 import com.sample.models.facade.UserAccountFacade;
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * Created by ganeshramiyer on 10/24/16.
@@ -14,13 +12,16 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class LoginController {
 
+    Logger logger = Logger.getLogger(LoginController.class);
+
     @Autowired
     UserAccountFacade userAccountFacade;
 
-    @RequestMapping(value = "/validateuser", method = RequestMethod.POST)
+    @RequestMapping(value = "/validateuser", method = RequestMethod.GET)
     @ResponseBody
-    public String validateUser(@RequestParam("email") String email, @RequestParam("password") String password){
-        if (userAccountFacade.checkCredentials(email, password)) {
+    public String validateUser(@RequestParam("username") String username, @RequestParam("password") String password) {
+        if (userAccountFacade.checkCredentials(username, password)) {
+            logger.info("True");
             return "Valid user";
         } else {
             return "Wrong credentials";
