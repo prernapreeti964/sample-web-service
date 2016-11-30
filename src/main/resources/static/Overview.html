@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="Overview.css">
+    <title>Mentor Resource</title>
+</head>
+<body>
+<nav class="navbar navbar-default">
+    <div id="menu-bar" class="container-fluid">
+        <div class="navbar-header">
+            <a href="http://www.mentorresource.com" class="pull-left"><img id="branding" src="https://raw.githubusercontent.com/ganesh4991/sample-web-service/master/src/main/resources/static/logo.png"></a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li><a href="#">Home</a></li>
+            <li class="active"><a href="#">Overview</a></li>
+            <li><a href="#">Student Metrics</a></li>
+            <li><a href="#">Mentor Metrics</a></li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container">
+    <h4>Welcome to Dashboard Overview, <var id="userName">name</var></h4>
+</div>
+<div id="filter">
+    <select id="year">
+        <option selected="selected">Select Year</option>
+        <option value="2016">2016</option>
+        <option value="2015">2015</option>
+    </select>
+    <input type="submit" id="filer-change" class="btn btn-info btn-sm submit-button">
+</div>
+<div id="mentorstudent-count" align='center'>
+</div>
+
+</div>
+<div id="filter2">
+    <select id="type">
+        <option selected="selected">Select Type</option>
+        <option value="Mentors">Mentors</option>
+        <option value="Students">Students</option>
+    </select>
+    <input type="submit" id="filer-change2" class="btn btn-info btn-sm submit-button">
+</div>
+<div id="mentorstudent-count2" align='center'>
+</div>
+
+</div>
+<div id="filter3">
+    <select id="unv">
+        <option selected="selected">Select University</option>
+        <option value="Indiana University">Indiana University</option>
+        <option value="Purdue University">Purdue University</option>
+    </select>
+    <input type="submit" id="filer-change3" class="btn btn-info btn-sm submit-button">
+</div>
+<div id="mentorstudent-count3" align='center'>
+</div>
+
+</body>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script src="Overview.js"></script>
+</html>
